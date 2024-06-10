@@ -4,5 +4,5 @@ resources:
 - manifest/controller.yaml
 - manifest/namespace.yaml
 images:
-- digest: sha256:3207c2bbdc0bdec1e663c732f93db54eb24d5bd4197cbe953749a9da72d84a34
+- digest: sha256:cb1be7a0a71b9fe95b0d52c849441550b328a151e810589dc7f01eb563b032a5
   name: ghcr.io/supernetes/controller
