@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - manifest/controller.yaml
 - manifest/namespace.yaml
+- manifest/rbac.yaml
 images:
-- digest: sha256:43c5e3b542566f69a9c4ec49359468b6b734c00c15efc24ea7a5d6df899b1e2d
+- digest: sha256:74a7297805821f1c0783f88f2398c841404e65caaf54f655af13b6f57561964d
   name: ghcr.io/supernetes/controller
