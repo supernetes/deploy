@@ -10,11 +10,11 @@ metadata:
   name: supernetes
 rules:
   - apiGroups: [""]
-    resources: ["configmaps", "pods", "secrets", "services"]
+    resources: ["configmaps", "secrets", "services"]
     verbs: ["list", "watch"]
   - apiGroups: [""]
     resources: ["pods"]
-    verbs: ["create"]
+    verbs: ["*"]
   - apiGroups: [""]
     resources: ["nodes"]
     verbs: ["get", "create"]
