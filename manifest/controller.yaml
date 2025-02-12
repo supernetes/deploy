@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: supernetes-controller
+  namespace: supernetes
+spec:
+  replicas: 1 # Multiple replicas not yet supported
+  selector:
+    matchLabels:
+      app: supernetes
+  template:
+    metadata:
+      labels:
+        app: supernetes
+    spec:
+      containers:
+        - name: controller
+          image: ghcr.io/supernetes/controller
+          args:
+            - --config
+            - /config/config.yaml
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+          volumeMounts:
+            - name: config
+              mountPath: /config
+              readOnly: true
+      volumes:
+        - name: config
+          secret:
+            # The configuration secret must be provided by
+            # the user, use the `config` tool to generate it
+            secretName: supernetes-config
+      serviceAccountName: supernetes
