@@ -26,7 +26,7 @@ rules:
     verbs: ["create", "patch"]
   - apiGroups: ["certificates.k8s.io"]
     resources: ["certificatesigningrequests"]
-    verbs: ["create", "list"]
+    verbs: ["create", "list", "watch"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
