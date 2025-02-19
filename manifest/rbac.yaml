@@ -30,6 +30,8 @@ rules:
   - apiGroups: ["certificates.k8s.io"]
     resources: ["certificatesigningrequests/approval"]
     verbs: ["update"]
+  # The Supernetes controller must be able to approve the Kubelet
+  # serving certificate requests for its Virtual Kubelet instances
   - apiGroups: ["certificates.k8s.io"]
     resources: ["signers"]
     resourceNames: ["kubernetes.io/kubelet-serving"]
