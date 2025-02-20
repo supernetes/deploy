@@ -43,7 +43,7 @@ spec:
               mountPath: /config
               readOnly: true
             - name: ephemeral
-              mountPath: /var/lib/supernetes
+              mountPath: /var/lib/supernetes # TODO: Move to /ephemeral
       volumes:
         - name: config
           secret:
@@ -51,5 +51,6 @@ spec:
             # the user, use the `config` tool to generate it
             secretName: supernetes-config
         - name: ephemeral
+          # noinspection KubernetesUnknownValues
           emptyDir:
       serviceAccountName: supernetes
