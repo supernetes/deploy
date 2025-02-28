@@ -37,6 +37,7 @@ spec:
             capabilities:
               drop:
                 - ALL
+            readOnlyRootFilesystem: true
             runAsNonRoot: true
           volumeMounts:
             - name: config
@@ -51,6 +52,5 @@ spec:
             # the user, use the `config` tool to generate it
             secretName: supernetes-config
         - name: ephemeral
-          # noinspection KubernetesUnknownValues
-          emptyDir:
+          emptyDir: {}
       serviceAccountName: supernetes
