@@ -43,14 +43,14 @@ spec:
             - name: config
               mountPath: /config
               readOnly: true
-            - name: ephemeral
-              mountPath: /ephemeral
+            - name: data
+              mountPath: /data
       volumes:
         - name: config
           secret:
             # The configuration secret must be provided by
             # the user, use the `config` tool to generate it
             secretName: supernetes-config
-        - name: ephemeral
+        - name: data
           emptyDir: {}
       serviceAccountName: supernetes
