@@ -13,7 +13,7 @@ Configure `deployment/kustomization.yaml` as follows:
 
 ```yaml
 resources:
-  - https://github.com/supernetes/deploy?ref=
+  - https://github.com/supernetes/deploy?ref=master
   
 # Use patches to further configure the deployment
 #patches:
