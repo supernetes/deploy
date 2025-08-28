@@ -7,5 +7,5 @@ resources:
 - manifest/route.yaml
 - manifest/service.yaml
 images:
-- digest: sha256:8bd9c4c6c8882b600aee698c6353db68cddd6376f672778388fa96c0147e4c7f
+- digest: sha256:ac720b48bebbf9ff6df992f96fc8b0859d096506b520c5e7fa6a3722107a572f
   name: ghcr.io/supernetes/controller
