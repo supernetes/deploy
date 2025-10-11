@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- manifest/controller.yaml
+- manifest/namespace.yaml
+- manifest/rbac.yaml
+- manifest/route.yaml
+- manifest/service.yaml
+images:
+- digest: sha256:045d40f064c9d12b2295fae21c1c8373f853c0cd762989ebc100ca56a145914d
+  name: ghcr.io/supernetes/controller
